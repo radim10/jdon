@@ -35,16 +35,16 @@ Inspired by JSON, JDON uses **path-based keys** and **columnar arrays** to reduc
 ### Example JDON
 
 ```jdon
-{
-  meta.version:2|
-  meta.created:2025-01-15|
-  tags:[admin,dev,ops]|
-  users:[
-    id:1,2,3|
-    name:Alice,Bob,Charlie|
-    role:admin,user,user
-  ]
-}
+meta:{
+  version:2|
+  created:2025-01-15
+}|
+tags:[admin,dev,ops]|
+users:[
+  id:1,2,3|
+  name:Alice,Bob,Charlie|
+  role:admin,user,user
+]
 ```
 
 ## JDON: Handling Special Characters & Quoting

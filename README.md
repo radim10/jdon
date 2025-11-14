@@ -9,7 +9,6 @@ Inspired by JSON, JDON uses **path-based keys** and **columnar arrays** to reduc
 - **Token-efficient** — columnar arrays and minimal punctuation drastically reduce token count.
 - **Human-readable** — simpler than JSON for large datasets, without deep nesting or unnecessary quotes.
 - **Columnar arrays** — perfect for arrays of objects, reducing repetition.
-- **Flat nested keys** — no deep `{}` nesting; use dot-path keys instead.
 
 ---
 
@@ -45,6 +44,12 @@ users:[
   name:Alice,Bob,Charlie|
   role:admin,user,user
 ]
+```
+
+#### Without formatting
+
+```
+meta:{version:2|created:2025-01-15}|tags:[admin,dev,ops]|users:[id:1,2,3|name:Alice,Bob,Charlie|role:admin,user,user]
 ```
 
 ## JDON: Handling Special Characters & Quoting

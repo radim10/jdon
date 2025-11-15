@@ -730,6 +730,131 @@ console.log(
   `Savings: ${((1 - mixedJDON.length / mixedJSON.length) * 100).toFixed(1)}%`
 );
 
+const example = [
+  {
+    id: 1,
+    name: "Alice Johnson",
+    age: 29,
+    email: "alice.johnson@example.com",
+    isActive: true,
+    role: "developer",
+    department: "engineering",
+    joinDate: "2020-03-15",
+    lastLogin: "2025-11-10T14:22:05Z",
+    salary: 85000,
+    projects: ["Project A", "Project B"],
+    address: {
+      street: "123 Maple Street",
+      city: "New York",
+      zip: "10001",
+      country: "USA",
+    },
+    skills: ["JavaScript", "React", "Node.js", "Python"],
+    performanceScore: 88.5,
+    managerId: 101,
+  },
+  {
+    id: 2,
+    name: "Bob Smith",
+    age: 35,
+    email: "bob.smith@example.com",
+    isActive: false,
+    role: "designer",
+    department: "product",
+    joinDate: "2018-07-22",
+    lastLogin: "2025-10-29T09:14:42Z",
+    salary: 72000,
+    projects: ["Project X", "Project Y", "Project Z"],
+    address: {
+      street: "456 Oak Avenue",
+      city: "San Francisco",
+      zip: "94102",
+      country: "USA",
+    },
+    skills: ["Figma", "Sketch", "Illustrator"],
+    performanceScore: 91.2,
+    managerId: 102,
+  },
+  {
+    id: 3,
+    name: "Catherine Lee",
+    age: 42,
+    email: "catherine.lee@example.com",
+    isActive: true,
+    role: "project manager",
+    department: "operations",
+    joinDate: "2015-01-10",
+    lastLogin: "2025-11-12T16:08:22Z",
+    salary: 95000,
+    projects: ["Project Alpha", "Project Beta"],
+    address: {
+      street: "789 Pine Road",
+      city: "Chicago",
+      zip: "60605",
+      country: "USA",
+    },
+    skills: ["Agile", "Scrum", "Leadership", "Communication"],
+    performanceScore: 94.7,
+    managerId: 103,
+  },
+  {
+    id: 4,
+    name: "Daniel Martinez",
+    age: 31,
+    email: "daniel.martinez@example.com",
+    isActive: true,
+    role: "QA engineer",
+    department: "quality assurance",
+    joinDate: "2019-09-05",
+    lastLogin: "2025-11-14T11:45:10Z",
+    salary: 68000,
+    projects: ["Project Gamma"],
+    address: {
+      street: "321 Cedar Blvd",
+      city: "Austin",
+      zip: "73301",
+      country: "USA",
+    },
+    skills: ["Selenium", "Cypress", "Test Automation", "API Testing"],
+    performanceScore: 89.3,
+    managerId: 104,
+  },
+  {
+    id: 5,
+    name: "Emily Davis",
+    age: 27,
+    email: "emily.davis@example.com",
+    isActive: false,
+    role: "data analyst",
+    department: "analytics",
+    joinDate: "2021-05-18",
+    lastLogin: "2025-10-25T13:55:47Z",
+    salary: 77000,
+    projects: ["Project Delta", "Project Epsilon"],
+    address: {
+      street: "654 Birch Lane",
+      city: "Seattle",
+      zip: "98101",
+      country: "USA",
+    },
+    skills: ["SQL", "Python", "Tableau", "Excel", "Power BI"],
+    performanceScore: 87.8,
+    managerId: 105,
+  },
+];
+
+const exampleJSON = JSON.stringify(example);
+const exampleJDON = JDON.stringify(example, { pretty: true, columnar: true });
+
+console.log("\n=== Test 4: Objects and Arrays ===");
+console.log(`JSON: ${exampleJSON.length} chars`);
+console.log(`JDON: ${exampleJDON.length} chars`);
+console.log(
+  `Savings: ${((1 - exampleJDON.length / exampleJSON.length) * 100).toFixed(
+    1
+  )}%`
+);
+
 // Export
 if (typeof module !== "undefined" && module.exports) {
   module.exports = { JDON, JDONParser, fromJSON, toJSON };

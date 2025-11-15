@@ -52,49 +52,15 @@ users:[
 meta:{version:2|created:2025-01-15}|tags:[admin,dev,ops]|users:[id:1,2,3|name:Alice,Bob,Charlie|role:admin,user,user]
 ```
 
-## JDON: Handling Special Characters & Quoting
+#### Columnar Arrays
 
-- **Simple string**  
-  JSON: `"name": "Alice"`  
-  JDON: `name:Alice`  
-  _No quotes needed for plain strings_
-
-- **String with space**  
-  JSON: `"title": "Hello World"`  
-  JDON: `title:"Hello World"`  
-  _Wrap in quotes when spaces are present_
-
-- **String with pipe**  
-  JSON: `"notes": "Alice | Bob"`  
-  JDON: `notes:"Alice | Bob"`  
-  _Pipe inside value must be quoted_
-
-- **String with colon**  
-  JSON: `"key": "a:b"`  
-  JDON: `key:"a:b"`  
-  _Colon inside value must be quoted_
-
-- **String with braces**  
-  JSON: `"desc": "Use {curly}"`  
-  JDON: `desc:"Use {curly}"`  
-  _Braces inside value must be quoted_
-
-- **String with brackets**  
-  JSON: `"tags": "[admin,dev]"`  
-  JDON: `tags:"[admin,dev]"`  
-  _Brackets inside value must be quoted_
-
-- **String with quotes**  
-  JSON: `"quote": "He said \"hi\""`  
-  JDON: `quote:"He said \"hi\""`  
-  _Escape internal quotes with backslash_
-
-- **Columnar array with comma**  
-  JSON: `[ "A,B", "C,D" ]`  
-  JDON: `values:["A,B","C,D"]`  
-  _Comma inside array element must be quoted_
-
-- **Columnar array with pipe**  
-  JSON: `[ "A|B", "C|D" ]`  
-  JDON: `values:["A|B","C|D"]`  
-  _Pipe inside array element must be quoted_
+```jdon
+[
+  id:emp_001,emp_002,emp_003,emp_004,emp_005|
+  name:"Alice Johnson","Bob Smith","Carol White","David Brown","Eve Davis"|
+  email:alice.j@company.com,bob.smith@company.com,carol.w@company.com,david.b@company.com,eve.davis@company.com|
+  department:Engineering,Marketing,Engineering,Sales,HR|
+  salary:95000,72000,103000,68000,81000|
+  active:true,true,true,false,true
+]
+```
